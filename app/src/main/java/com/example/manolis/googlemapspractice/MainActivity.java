@@ -14,7 +14,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MainActivity extends Activity {
 
-    static final LatLng MyPosition = new LatLng(80, -70);
+    static final LatLng MyPosition = new LatLng(50, -70);
 
     private GoogleMap googleMap;
 
