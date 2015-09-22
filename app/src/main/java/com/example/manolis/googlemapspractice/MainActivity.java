@@ -64,7 +64,7 @@ public class MainActivity extends Activity {
 
             googleMap.getUiSettings().setZoomControlsEnabled(true);
 
-           // Marker marker = googleMap.addMarker(new MarkerOptions().position(MyPosition).title("turnUp"));
+           //Marker marker = googleMap.addMarker(new MarkerOptions().position(MyAddress).title("turnUp"));
 
 
         }
@@ -104,6 +104,7 @@ public class MainActivity extends Activity {
         if(newAddress != null){
             new PlaceMarker().execute(newAddress);
         }
+        else System.out.print("Error - Address Null");
 
     }
 
