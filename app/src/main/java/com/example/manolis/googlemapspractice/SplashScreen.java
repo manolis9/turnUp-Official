@@ -10,7 +10,7 @@ import android.os.Handler;
  */
 public class SplashScreen extends Activity{
 
-    private static int SPLASH_SCREEN_DELAY = 3000;
+    private static int SPLASH_SCREEN_DELAY = 300;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class SplashScreen extends Activity{
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+                Intent intent = new Intent(SplashScreen.this, CreateGame.class);
                 startActivity(intent);
 
                 finish();

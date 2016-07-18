@@ -1,0 +1,127 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical|center_horizontal" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_gravity="center_vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Event Title"
+                android:id="@+id/create_eventTitle"
+                android:gravity="center"
+                android:layout_weight="0.15" />
+
+            <Spinner
+                android:id="@+id/sports_spinner"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"
+                android:layout_below="@+id/event_title"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:gravity="center"/>
+
+            <Spinner
+                android:id="@+id/players_spinner"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"
+                android:layout_below="@+id/event_title"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:gravity="center"/>
+
+            <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Date"
+                android:id="@+id/Date"
+                android:gravity="center"
+                android:layout_weight="0.15"/>
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Time"
+                android:id="@+id/Time"
+                android:gravity="center"
+                android:layout_weight="0.15"/>
+
+            </LinearLayout>
+
+        <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+
+            <EditText
+                android:layout_width="295dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:ems="10"
+                android:id="@+id/addressEditText"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:hint="Venue Address"
+                android:layout_gravity="center_horizontal|bottom" />
+
+            <Button
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="GO"
+                android:id="@+id/getAddressButton"
+                android:layout_alignBottom="@+id/addressEditText"
+                android:layout_marginRight="10dp"
+                android:onClick="showAddressMarker"
+                android:layout_gravity="right|bottom" />
+
+           </LinearLayout>
+
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_below="@+id/sports_spinner"
+                android:layout_height="310dp"
+                android:id="@+id/create_map_fragment"
+                android:name="com.google.android.gms.maps.MapFragment" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Description"
+                android:id="@+id/Description"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:gravity="center"
+                android:background="@drawable/rectangle"
+                android:layout_weight="0.15"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" Invite Teammates"
+                android:id="@+id/showTeammates"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
