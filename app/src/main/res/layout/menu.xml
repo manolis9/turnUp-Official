@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
+        android:text="@string/menu"
+        android:id="@+id/menuTextView"
+        android:gravity="left" />
+
+    <Button
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:text="Find Games"
+        android:id="@+id/joinGameButton"
+        android:layout_gravity="left"
+        />
+
+    <Button
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:text="Create a Game"
+        android:id="@+id/createGameButton"
+        android:layout_gravity="left"
+        />
+
+    <Button
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:text="My Profile"
+        android:id="@+id/playerProfileButton"
+        android:layout_gravity="left"
+        />
+
+    <Button
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:text="My Games"
+        android:id="@+id/myGamesButton"
+        android:layout_gravity="left"
+        />
+
+
+</LinearLayout>

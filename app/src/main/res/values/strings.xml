@@ -7,6 +7,7 @@
     <string name="event_description">Event Description</string>
     <string name="event_comments">Comments</string>
     <string name="find_games">Find an Event</string>
+    <string name="menu">Menu</string>
 
 
     <string-array name="sports_array">
