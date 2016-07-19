@@ -1,9 +1,10 @@
 package com.example.manolis.googlemapspractice;
 
 import com.google.android.gms.games.Player;
+import com.google.android.gms.maps.model.LatLng;
 
 /**
- * Created by manio on 2016-07-16.
+ * Created by Manolis on 2016-07-16.
  */
 
 public class Event {
@@ -20,6 +21,7 @@ public class Event {
         private String time;
         private  String description;
         private String address;
+        private LatLng location;
 
         public Event() {
 
@@ -70,5 +72,18 @@ public class Event {
         public void setSport(String sport) {
             this.sport = sport;
         }
+
+        public LatLng getLocation() {
+        return location;
+    }
+
+        public void setLocation(LatLng location) {
+        this.location = location;
+    }
+
+        public void unsetLocation() {
+        this.location = null;
+    }
+
     }
 

@@ -76,6 +76,7 @@ public class CreateGame extends FragmentActivity {
     private String eventTime;
     private String maxNumPlayers;
     private String sport;
+    Event event;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +111,7 @@ public class CreateGame extends FragmentActivity {
         });
 
         addressEditText = (EditText) findViewById(R.id.addressEditText);
+        event = new Event();
 
         try {
 
@@ -128,12 +130,16 @@ public class CreateGame extends FragmentActivity {
                 @Override
                 public void onMapClick(LatLng point) {
 
+
                     /* Place a marker by tapping on the map. Add that marker to markers ArrayList*/
                     MarkerOptions marker = new MarkerOptions().position(
                             new LatLng(point.latitude, point.longitude)).title(String.valueOf(point.latitude)
                             + ", " + String.valueOf(point.longitude));
                     googleMap.clear();
+                    event.unsetLocation();
                     googleMap.addMarker(marker);
+
+                    event.setLocation(point);
 
                 }
             });
@@ -144,6 +150,7 @@ public class CreateGame extends FragmentActivity {
 
                     //Remove all the markers from the map when tapping and holding
                     googleMap.clear();
+                    event.unsetLocation();
                 }
             });
 
@@ -183,6 +190,7 @@ class PlaceMarker extends AsyncTask<String, String, String> {
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
 
+        event.unsetLocation();
         googleMap.clear();
         addressMarker = googleMap.addMarker(new MarkerOptions().position(addressPos).title(String.valueOf(addressPos.latitude)
                 + ", " + String.valueOf(addressPos.longitude)).draggable(true));
@@ -190,6 +198,7 @@ class PlaceMarker extends AsyncTask<String, String, String> {
        // googleMap.moveCamera(CameraUpdateFactory.newLatLng(addressPos));
         float zoomLevel = (float) 12.0; //This goes up to 21
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(addressPos, zoomLevel));
+        event.setLocation(addressPos);
     }
 }
 
@@ -360,7 +369,7 @@ class PlaceMarker extends AsyncTask<String, String, String> {
 
     public void createGame(View v) {
 
-        Event event = new Event();
+
 
         this.eventDescription = descriptionEditText.getText().toString();
         this.eventAddress = addressEditText.getText().toString();
@@ -393,32 +402,27 @@ class PlaceMarker extends AsyncTask<String, String, String> {
                             }else{
                                 Toast toast = Toast.makeText(this, "No Sport Selected", Toast.LENGTH_SHORT);
                                 toast.show();
-                                return;
                             }
                         }else{
                             Toast toast = Toast.makeText(this, "Number of Players Not Specified", Toast.LENGTH_SHORT);
                             toast.show();
-                            return;
                         }
                     }else{
                         Toast toast = Toast.makeText(this, "Event Time not Specified", Toast.LENGTH_SHORT);
                         toast.show();
-                        return;
                     }
                 }else{
                     Toast toast = Toast.makeText(this, "Event Date not Specified", Toast.LENGTH_SHORT);
                     toast.show();
-                    return;
                 }
             }else{
                 Toast toast = Toast.makeText(this, "Event Address Not Specified", Toast.LENGTH_SHORT);
                 toast.show();
-                return;
             }
         }else{
             Toast toast = Toast.makeText(this, "Event Title Not Specified", Toast.LENGTH_SHORT);
             toast.show();
-            return;
+
         }
 
     }
