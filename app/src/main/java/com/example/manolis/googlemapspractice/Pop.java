@@ -40,7 +40,7 @@ public class Pop extends Activity{
         teammates.add("Jack Sparrow");
         teammates.add("Nikos Charmeleon");
         teammates.add("Buddha");
-        teammates.add("Stefania Veriopoulou");
+        teammates.add("Tis manas tou Manoli");
         teammates.add("Matina Vardoulaki");
         teammates.add("Nasif Morris");
 
